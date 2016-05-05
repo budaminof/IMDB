@@ -10,16 +10,16 @@
 
   <script src="app.js"></script>
   <script src="controllers/main.ctrl.js"></script>
-  <script src="directives/movielist/movielist.js"></script>
   <script src="directives/nav/nav.js"></script>
+  <script src="directives/list/list.js"></script>
   <script src="directives/movieinfo/movieinfo.js"></script>
-
-  <!-- <script src="services/"></script> -->
 
   <title>IMDB</title>
 </head>
+
 <body ng-controller="MainCtrl">
   <om-nav />
-  <movie-list />
+  <movie-info></movie-info>
+  <list />
 </body>
 </html>
