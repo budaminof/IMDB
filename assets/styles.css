@@ -1,0 +1,12 @@
+input[type="text"]{
+  transition: 1s ease all;
+  width: 200px;
+  border: 1px solid black;
+}
+
+input[type="text"]:focus {
+  transition: 1s ease all;
+  border: 1px solid green;
+
+  width: 300px;
+}

@@ -1,9 +1,9 @@
 angular.module('omdb')
-.directive('list', function () {
+.directive('movieList', function () {
 
   return {
     restrict: 'E',
-    templateUrl: "/directives/list/list.html",
+    templateUrl: "/directives/movieList/movielist.html",
     scope: {},
     link: function (scope, element, attr) {
       console.log("somekbsakjlb");

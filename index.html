@@ -6,20 +6,24 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css">
   <link rel="stylesheet" href="assets/styles.css">
 
   <script src="app.js"></script>
+  <script src="services/movie.service.js"></script>
   <script src="controllers/main.ctrl.js"></script>
   <script src="directives/nav/nav.js"></script>
-  <script src="directives/list/list.js"></script>
+  <script src="directives/movieList/movielist.js"></script>
   <script src="directives/movieinfo/movieinfo.js"></script>
 
   <title>IMDB</title>
 </head>
 
 <body ng-controller="MainCtrl">
-  <om-nav />
-  <movie-info></movie-info>
-  <list />
+  <main class="col-md-10 col-md-offset-1">
+    <om-nav class="text-center"></om-nav>
+
+  </main>
 </body>
 </html>

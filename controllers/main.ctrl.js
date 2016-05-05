@@ -1,5 +1,7 @@
 angular.module('omdb')
-.controller('MainCtrl', ['$scope', function ($scope) {
+.controller('MainCtrl', ['$scope', 'movieService','$log', function ($scope, movieService, $log) {
+  $scope.search = {};
+
 
 
 }]);
