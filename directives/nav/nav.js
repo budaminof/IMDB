@@ -8,7 +8,7 @@ angular.module('omdb')
     link: function (scope, element, attr) {
 
       scope.searchForMovies = function () {
-        var newSearch = angular.copy(scope.search);
+        var newSearch = angular.copy(scope.search.title);
         scope.search = {};
         scope.myForm.$setUntouched();
         return movieService.searchMovies(newSearch);
