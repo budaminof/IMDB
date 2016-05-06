@@ -1,8 +1,9 @@
 angular.module('omdb')
-.controller('MainCtrl', ['$scope', 'movieService','$log', function ($scope, movieService, $log) {
+.controller('MainCtrl', ['$scope', 'movieService','$log', '$location', function ($scope, movieService, $log, $location) {
   $scope.search = {};
 
   $scope.searchForMovies = function () {
+    $location.path('/');
     var newSearch = angular.copy($scope.search.title);
     $scope.search = {};
 

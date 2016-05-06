@@ -22,7 +22,7 @@
 <body ng-controller="MainCtrl">
   <main class="col-md-10 col-md-offset-1">
     <ng-include src="'partials/nav.html'" class="text-center"></ng-include>
-    <movie-list list="searchResult"></movie-list>
+    <div ng-view></div>
   </main>
 </body>
 </html>

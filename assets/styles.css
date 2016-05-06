@@ -26,3 +26,14 @@ article:hover {
   transition: 1s ease all;
   transform: scaleX(1.1);
 }
+
+.error {
+  width: 800px;
+  margin-left: 80px;
+}
+
+.list-error {
+  width: 300px;
+  margin-right: 200px;
+
+}
