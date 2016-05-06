@@ -1,10 +1,10 @@
 angular.module('omdb', ['ngRoute'])
-.config(function($routeProvider) {
+.config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         template: '<movie-list list="searchResult"></movie-list>'
       })
-      .when('/test', {
+      .when('/:id/show', {
         template: '<movie-info />'
       })
       .when('/404', {
@@ -13,4 +13,6 @@ angular.module('omdb', ['ngRoute'])
       .otherwise({
         redirectTo: '/404'
       })
+
+      $locationProvider.html5Mode(true);
 });

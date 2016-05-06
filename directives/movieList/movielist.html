@@ -2,15 +2,18 @@
   <span ng-if="list == 'Movie not found!'">
     <div class="list-error"><img src="http://sportuna.bg/media/flycart/config/default/page_not_found.gif" class="animated tada infinite"></div>
   </span>
-  <span ng-if="list !== 'Movie not found!'">
+  
+  <div ng-if="list != 'Movie not found!'">
     <article ng-repeat="item in list" class="row">
-      <div class="col-md-2">
-        <img ng-src="{{item.imageUrl}}" class="imgList">
-      </div>
-      <div class="col-md-8 col-md-offset-2">
-        <h3 ng-bind="item.title"></h3>
-        <h4 ng-bind="item.year"></h4>
-      </div>
+      <a ng-href="/{{item.id}}/show">
+        <div class="col-md-2">
+          <img ng-src="{{item.imageUrl}}" class="imgList">
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <h3 ng-bind="item.title"></h3>
+          <h4 ng-bind="item.year"></h4>
+        </div>
+      </a>
     </article>
-  </span>
+  </div>
 </div>

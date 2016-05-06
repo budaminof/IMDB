@@ -3,7 +3,7 @@ angular.module('omdb')
 
   return {
     restrict: 'E',
-    templateUrl: 'directives/movieinfo/movieinfo.html',
+    templateUrl: '/directives/movieinfo/movieinfo.html',
     scope: {}
   }
 
