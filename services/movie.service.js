@@ -1,15 +1,16 @@
 angular.module('omdb')
 .factory('movieService', ['$http', '$log', '$q', function ($http, $log, $q) {
 
-  var cachedMovies = {};
+  var cachedSearches = {};
+  var chachedMovie = {};
 
   var movieService = {
     searchMovies: function (term) {
       var url = 'http://www.omdbapi.com/?s='+ term +'&type=movie';
 
       return $q(function (resolve, reject) {
-        if(cachedMovies[term]) {
-          resolve(cachedMovies[term]);
+        if(cachedSearches[term]) {
+          resolve(cachedSearches[term]);
         } else {
           $http.get(url).success(function(res) {
             if(res.Response === "False") {
@@ -26,14 +27,39 @@ angular.module('omdb')
                 year: item.Year
               })
             });
-            cachedMovies[term] = normalizeArr;
-            resolve(cachedMovies[term]);
+            cachedSearches[term] = normalizeArr;
+            resolve(cachedSearches[term]);
             }
           }).error(function(errah){
             reject(errah);
           })
         }
       })
+
+    },
+
+    findMovie: function (id) {
+      $log.info('in service',id);
+      var movieUrl = 'http://www.omdbapi.com/?i='+ id ;
+
+      return $q(function (resolve, reject) {
+        if(chachedMovie[id]) {
+          resolve(chachedMovie[id]);
+        } else {
+          $http.get(movieUrl).success(function(res) {
+            if(res.Response === "False") {
+              resolve(res.Error);
+            } else {
+            chachedMovie[id] = res;
+            $log.info('chached movie in service',chachedMovie[id]);
+            resolve(chachedMovie[id]);
+            }
+          }).error(function(errah){
+            reject(errah);
+          })
+        }
+      })
+
 
     }
   }

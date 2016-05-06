@@ -2,7 +2,7 @@ angular.module('omdb', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        template: '<movie-list list="searchResult"></movie-list>'
+        template: '<movie-list list="searchResult" findMovie="findMovie"></movie-list>'
       })
       .when('/:id/show', {
         template: '<movie-info />'

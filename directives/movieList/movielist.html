@@ -2,7 +2,7 @@
   <span ng-if="list == 'Movie not found!'">
     <div class="list-error"><img src="http://sportuna.bg/media/flycart/config/default/page_not_found.gif" class="animated tada infinite"></div>
   </span>
-  
+
   <div ng-if="list != 'Movie not found!'">
     <article ng-repeat="item in list" class="row">
       <a ng-href="/{{item.id}}/show">

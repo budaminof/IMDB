@@ -11,6 +11,6 @@ angular.module('omdb')
     .then(function(data){
         $scope.searchResult = data;
       })
-  };
-
+    };
+    
 }]);
