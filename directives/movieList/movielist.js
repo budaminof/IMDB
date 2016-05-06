@@ -6,6 +6,9 @@ angular.module('omdb')
     templateUrl: "/directives/movieList/movielist.html",
     scope: {
       list: '='
+    },
+    link: function(scope, el, attrs, fn) {
+      scope.list = movieService.movies;
     }
   }
 }]);

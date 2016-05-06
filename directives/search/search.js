@@ -3,22 +3,20 @@ angular.module('omdb')
 
   return {
     templateUrl: '/partials/nav.html',
+    replace: true,
+    scope: {},
     link: function(scope, el, attrs, fn) {
 
       scope.searchForMovies = function (form) {
         $location.path('/');
         var newSearch = angular.copy(form.title);
         scope.form = {};
-        movieService.searchMovies(newSearch)
-        .then(function(data){
-          scope.searchResult = data;
+        movieService.searchMovies(newSearch).then(function(data){
+          // scope.searchResult = data;
         })
       };
 
-    },
-    controller: 'SearchCtrl',
-    controllerAs: 'Search',
-    bindToController: true
+    }
   }
 
-}]).controller('SearchCtrl', function(){});
+}]);

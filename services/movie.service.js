@@ -2,10 +2,11 @@ angular.module('omdb')
 .factory('movieService', ['$http', '$log', '$q', function ($http, $log, $q) {
 
   var cachedSearches = {};
-  var chachedMovie = {};
+  var movies = [];
 
   var movieService = {
     searchMovies: function (term) {
+      term = term.toLowerCase().split(' ').join('+')
       var url = 'http://www.omdbapi.com/?s='+ term +'&type=movie';
 
       return $q(function (resolve, reject) {
@@ -14,20 +15,20 @@ angular.module('omdb')
         } else {
           $http.get(url).success(function(res) {
             if(res.Response === "False") {
+              movies.push(res.Error);
               resolve(res.Error);
             } else {
-            var result = res.Search;
-            var normalizeArr = [];
-            result.forEach(function (item){
-              normalizeArr.push({
+            movies.splice(0);
+            res.Search.forEach(function (item){
+              movies.push({
                 id: item.imdbID,
                 title: item.Title,
                 imageUrl: item.Poster,
                 type: item.Type,
                 year: item.Year
-              })
+              });
             });
-            cachedSearches[term] = normalizeArr;
+            cachedSearches[term] = movies;
             resolve(cachedSearches[term]);
             }
           }).error(function(errah){
@@ -43,16 +44,15 @@ angular.module('omdb')
       var movieUrl = 'http://www.omdbapi.com/?i='+ id ;
 
       return $q(function (resolve, reject) {
-        if(chachedMovie[id]) {
-          resolve(chachedMovie[id]);
+        if(cachedSearches[id]) {
+          resolve(cachedSearches[id]);
         } else {
           $http.get(movieUrl).success(function(res) {
             if(res.Response === "False") {
               resolve(res.Error);
             } else {
-            chachedMovie[id] = res;
-            $log.info('chached movie in service',chachedMovie[id]);
-            resolve(chachedMovie[id]);
+            cachedSearches[id] = res;
+            resolve(cachedSearches[id]);
             }
           }).error(function(errah){
             reject(errah);
@@ -61,8 +61,8 @@ angular.module('omdb')
       })
 
 
-    }
+    },
+    movies: movies
   }
-
   return movieService;
 }])
