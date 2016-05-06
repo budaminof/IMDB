@@ -13,6 +13,7 @@
   <script src="/app.js"></script>
   <script src="/services/movie.service.js"></script>
   <script src="/controllers/main.ctrl.js"></script>
+  <script src="/directives/search/search.js"></script>
   <script src="/directives/movieList/movielist.js"></script>
   <script src="/directives/movieinfo/movieinfo.js"></script>
 
@@ -20,12 +21,16 @@
   <base href="/">
 </head>
 
-<body ng-controller="MainCtrl">
+<body>
 
-  <main class="col-md-10 col-md-offset-1">
-    <ng-include src="'/partials/nav.html'" class="text-center"></ng-include>
-    <div ng-view></div>
-  </main>
+  <div ng-controller="MainCtrl">
+
+    <main class="col-md-10 col-md-offset-1">
+      <mov-search></mov-search>
+      <div ng-view></div>
+    </main>
+
+  </div>
 
 </body>
 </html>
