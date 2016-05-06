@@ -17,13 +17,13 @@
   <script src="directives/movieList/movielist.js"></script>
   <script src="directives/movieinfo/movieinfo.js"></script>
 
-  <title>IMDB</title>
+  <title>OMDb</title>
 </head>
 
 <body ng-controller="MainCtrl">
   <main class="col-md-10 col-md-offset-1">
     <om-nav class="text-center"></om-nav>
-
+    <movie-list list="searchResult"></movie-list>
   </main>
 </body>
 </html>

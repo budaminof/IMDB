@@ -4,24 +4,23 @@ angular.module('omdb')
   var movieService = {
     searchResult: [],
     searchMovies: function (search) {
-        $http.get('http://www.omdbapi.com/?s='+ search)
-        .then(function (res) {
-          var result = res.data.Search;
-          // $log.info('result', result);
-          result.forEach(function (item){
-            movieService.searchResult.push({
-              id: item.imdbID,
-              title: item.Title,
-              imageUrl: item.Poster,
-              type: item.Type,
-              year: item.Year
-            });
+      return $http.get('http://www.omdbapi.com/?s='+ search+'&type=movie')
+      .then(function (res) {
+        movieService.searchResult.length = 0;
+        var result = res.data.Search;
+        result.forEach(function (item){
+         movieService.searchResult.push({
+            id: item.imdbID,
+            title: item.Title,
+            imageUrl: item.Poster,
+            type: item.Type,
+            year: item.Year
           })
-          $log.info(movieService.searchResult);
+        });
+        $log.info('in the service', movieService.searchResult);
+        return movieService.searchResult;
         })
-
     }
-
   }
 
   return movieService;

@@ -9,3 +9,20 @@ input[type="text"]:focus {
   border: 1px solid green;
   width: 300px;
 }
+
+.imgList {
+  height: 200px;
+}
+
+article {
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  width: 70%;
+  transition: 1s ease all;
+}
+
+article:hover {
+  transition: 1s ease all;
+  transform: scaleX(1.1);
+}

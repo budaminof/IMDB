@@ -6,7 +6,7 @@ angular.module('omdb')
     templateUrl: 'directives/nav/nav.html',
     scope: {},
     link: function (scope, element, attr) {
-
+      
       scope.searchForMovies = function () {
         var newSearch = angular.copy(scope.search.title);
         scope.search = {};

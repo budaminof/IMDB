@@ -1,13 +1,15 @@
 angular.module('omdb')
-.directive('movieList', function () {
+.directive('movieList', ['movieService', '$log', function (movieService, $log) {
 
   return {
     restrict: 'E',
     templateUrl: "/directives/movieList/movielist.html",
-    scope: {},
+    scope: {
+      list: '='
+    },
     link: function (scope, element, attr) {
-      console.log("somekbsakjlb");
+      $log.info('in the list directive', movieService.searchResult);
     }
   }
 
-});
+}]);
