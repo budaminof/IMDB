@@ -9,6 +9,7 @@ angular.module('omdb')
     movieService.searchMovies(newSearch)
     .then(function(data){
         $scope.searchResult = data;
+        console.log($scope.searchResult);
       })
   };
 

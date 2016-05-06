@@ -1,11 +1,16 @@
 <div class="col-md-offset-2">
-  <article ng-repeat="item in list" class="row">
-    <div class="col-md-2">
-      <img ng-src="{{item.imageUrl}}" class="imgList">
-    </div>
-    <div class="col-md-8 col-md-offset-2">
-      <h3 ng-bind="item.title"></h3>
-      <h4 ng-bind="item.year"></h4>
-    </div>
-  </article>
+  <span ng-if="list == 'Movie not found!'">
+    <img src="http://sportuna.bg/media/flycart/config/default/page_not_found.gif" class="animated tada infinite">
+  </span>
+  <span ng-if="list !== 'Movie not found!'">
+    <article ng-repeat="item in list" class="row">
+      <div class="col-md-2">
+        <img ng-src="{{item.imageUrl}}" class="imgList">
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h3 ng-bind="item.title"></h3>
+        <h4 ng-bind="item.year"></h4>
+      </div>
+    </article>
+  </span>
 </div>

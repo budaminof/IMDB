@@ -9,9 +9,12 @@ angular.module('omdb')
 
       return $q(function (resolve, reject) {
         if(cachedMovies[term]) {
-          deferred.resolve(cachedMovies[term]);
+          resolve(cachedMovies[term]);
         } else {
           $http.get(url).success(function(res) {
+            if(res.Response === "False") {
+              resolve(res.Error);
+            } else {
             var result = res.Search;
             var normalizeArr = [];
             result.forEach(function (item){
@@ -25,6 +28,7 @@ angular.module('omdb')
             });
             cachedMovies[term] = normalizeArr;
             resolve(cachedMovies[term]);
+            }
           }).error(function(errah){
             reject(errah);
           })
