@@ -6,10 +6,6 @@ angular.module('omdb')
     templateUrl: "/directives/movieList/movielist.html",
     scope: {
       list: '='
-    },
-    link: function (scope, element, attr) {
-      $log.info('in the list directive', movieService.searchResult);
     }
   }
-
 }]);
