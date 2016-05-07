@@ -2,19 +2,19 @@
 <html lang="en" ng-app="omdb">
 <head>
   <meta charset="UTF-8">
-  <script src="./bower_components/angular/angular.js"></script>
-  <script src="./bower_components/angular-route/angular-route.js"></script>
-  <script src="./bower_components/jquery/dist/jquery.js"></script>
-  <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="./bower_components/animate.css/animate.css">
-  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+  <link rel="stylesheet" href="assets/styles.css">
 
-  <script src="./app.js"></script>
-  <script src="./services/movie.service.js"></script>
-  <script src="./controllers/main.ctrl.js"></script>
-  <script src="./directives/movieList/movielist.js"></script>
-  <script src="./directives/movieinfo/movieinfo.js"></script>
+  <script src="app.js"></script>
+  <script src="services/movie.service.js"></script>
+  <script src="controllers/main.ctrl.js"></script>
+  <script src="directives/movieList/movielist.js"></script>
+  <script src="directives/movieinfo/movieinfo.js"></script>
 
   <title>OMDb</title>
   <base href="/">
@@ -23,7 +23,7 @@
 <body ng-controller="MainCtrl">
 
   <main class="col-md-10 col-md-offset-1">
-    <ng-include src="'./partials/nav.html'" class="text-center"></ng-include>
+    <ng-include src="'partials/nav.html'" class="text-center"></ng-include>
     <div ng-view></div>
   </main>
 
