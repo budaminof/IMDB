@@ -7,7 +7,7 @@
     <article ng-repeat="item in list" class="row">
       <a ng-href="/{{item.id}}/show">
         <div class="col-md-2">
-          <img ng-src="{{item.imageUrl}}" class="imgList">
+          <img ng-src="{{item.imageUrl}}" class="imgList" onError="src='/assets/coverunavailable.png'">
         </div>
         <div class="col-md-8 col-md-offset-2">
           <h3 ng-bind="item.title"></h3>

@@ -51,7 +51,6 @@ angular.module('omdb')
               resolve(res.Error);
             } else {
             chachedMovie[id] = res;
-            $log.info('chached movie in service',chachedMovie[id]);
             resolve(chachedMovie[id]);
             }
           }).error(function(errah){
