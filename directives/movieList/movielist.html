@@ -1,9 +1,10 @@
 <div class="col-md-offset-2">
-  <span ng-if="list == 'Movie not found!'">
+
+  <span ng-if="list[0].Error">
     <div class="list-error"><img src="http://sportuna.bg/media/flycart/config/default/page_not_found.gif" class="animated tada infinite"></div>
   </span>
 
-  <div ng-if="list != 'Movie not found!'">
+  <div ng-if="!list[0].Error">
     <article ng-repeat="item in list" class="row">
       <a ng-href="/{{item.id}}/show">
         <div class="col-md-2">
@@ -16,4 +17,5 @@
       </a>
     </article>
   </div>
+
 </div>

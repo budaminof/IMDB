@@ -1,10 +1,10 @@
 <nav class="page-header text-center">
-  <h2>Angular OMDb API search</h2>
+  <a ng-href="/"><h2>Angular OMDb API search</h2></a>
   <h4>Enter a movie by title.</h4>
 
   <form name="searchform" class="form-group" novalidate ng-submit="searchForMovies(form)">
     <div class="form-group">
-      <input type="text" name="title" ng-model="form.title" placeholder="Galvanize: The Drama">
+      <input type="text" name="title" ng-model="form.title" placeholder="Galvanize: The Drama" required>
     </div>
     <button type="submit" class="btn btn-primary">Search --></button>
   </form>

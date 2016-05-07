@@ -37,3 +37,8 @@ article:hover {
   margin-right: 200px;
 
 }
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}

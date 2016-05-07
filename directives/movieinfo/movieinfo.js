@@ -7,7 +7,6 @@ angular.module('omdb')
     scope: {},
     link: function (scope, element, attr) {
       movieService.findMovie($routeParams.id).then(function (data) {
-        $log.info('Directive', data)
         scope.movie = data;
       })
 

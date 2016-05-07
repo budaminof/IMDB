@@ -1,4 +1,3 @@
 angular.module('omdb')
-.controller('MainCtrl', [function () {
-
+.controller('MainCtrl', ['$scope', 'movieService',function ($scope, movieService) {
 }]);
